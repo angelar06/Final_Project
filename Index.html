@@ -10,14 +10,14 @@
 
 </style>
 <script>
-var canvas;
+/*var canvas;
 var context;
 var particles;
 var timer;
 var colors = ['pink', 'blue', 'green', 'aqua', 'purple', 'yellow', 'white']
 var shapes = ['circle', 'square', 'star','heart', 'triangle'];
 
-/*---------randomly chooses a string from the array and sets as the title-----------------*/
+
 function makeTitle() {
 	var lines = ['Wow!', 'Its So pretty!', 'Will you Marry me?', 'Lets go to Disney Land!', 'Do you wanna build a snowman?'];
 	var title = '';
@@ -28,14 +28,12 @@ function makeTitle() {
 	};
 	return(title);
 }
-//Check for changes
-/*---------------Creates the title when the button is clicked----------------*/
+
 function artHandler() {
 	var title = makeTitle();
 	drawText(canvas, context, title);
 }
 
-/*----------------Creates the different shapes when you click the button----------------*/
 function placeShape(){
 	var shape = shapes[Math.floor(Math.random() * shapes.length)];
 if (shape === 'triangle'){
@@ -71,7 +69,7 @@ function Particle(){
 	this.radius = 30;
 
 }
-/*----------------Creates the flashing shapes---------------------*/
+
 function  moveParticles(){
 	context.globalCompositeOperation = 'source-over';
 	context.fillStyle = 'rgba(0,0,0,.3)';
@@ -88,12 +86,11 @@ function  moveParticles(){
 		 else if (shape == 'square'){
 			drawSquare(canvas,context,color);
 		}
-	/*-------------creates fireworks------------------*/
+	
 		context.beginPath();
 		context.arc(p.x,p.y,p.radius, 0, degreesToRadians(360), true);
 		var grd = context.createLinearGradient(0, 0, canvas.width, canvas.height);
 
-     /*-------fives the fireworks gradient color-------------*/ 
       grd.addColorStop(0, 'red');   
       grd.addColorStop(1, p.color);
       context.fillStyle = grd;
@@ -108,7 +105,7 @@ function  moveParticles(){
 		if(p.radius >0) p.radius--;
 	}
 }
-/*--------------------------------functions to create shapes-----------------------------*/
+
 function drawSquare(canvas, context,color) {
 	var w = Math.floor(Math.random() * 40);
 	var x = Math.floor(Math.random() * canvas.width);
@@ -175,7 +172,7 @@ function drawStar(canvas, context,color){
            context.fillStyle = color;
 
         }
-/*-----------------Creates text-------------------*/
+
    function drawText(canvas, context, title) {
 	var x = Math.floor(Math.random() * canvas.width);
 	var y = Math.floor(Math.random() * canvas.height);
@@ -184,7 +181,7 @@ function drawStar(canvas, context,color){
 	context.textAlign = 'right';
 	context.fillText(title, x, y);
 
-}
+}*/
 
 window.onload = function(){
 	canvas = document.getElementById('canvas');
@@ -204,7 +201,7 @@ window.onload = function(){
 </head>
 <body>
 
-<canvas id='canvas' width='600' height='500'></canvas>
+<canvas id='canvas' width='1047' height='618'></canvas>
 	<form>
 	<input type='button' id='artButton' value='How do you feel?'>
 	</form>
