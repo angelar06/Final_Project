@@ -182,19 +182,30 @@ function drawStar(canvas, context,color){
 	context.fillText(title, x, y);
 
 }*/
+var imageObj = new Image();
+
+imageObj.onload = function(){
+context = canvas.getContext('2d');
+	context.drawImage(imageObj,0,0);
+};
+
+imageObj.src = "assets/Background.jpg";
 
 window.onload = function(){
 	canvas = document.getElementById('canvas');
 	context = canvas.getContext('2d');
-	makeParticles();
-	var button = document.getElementById('artButton');
-	button.onclick = artHandler;
-	var button = document.getElementById('shapeButton');
-	button.onclick = placeShape;
+	}
+	//makeParticles();
+	//var button = document.getElementById('artButton');
+	//button.onclick = artHandler;
+	//var button = document.getElementById('shapeButton');
+	//button.onclick = placeShape;
 
-	timer = setInterval(moveParticles,100);
-	timerTwo = setInterval(makeParticles,4000);
-}
+	//timer = setInterval(moveParticles,100);
+	//timerTwo = setInterval(makeParticles,4000);
+
+
+
 
 
 </script>
