@@ -182,19 +182,86 @@ function drawStar(canvas, context,color){
 	context.fillText(title, x, y);
 
 }*/
-var imageObj = new Image();
+/*------------Draw the background image-----------------*/
+var imageObj1 = new Image();
+//Mercury
+var imageObj2 = new Image();
+//Venus
+var imageObj3 = new Image();
+//Earth
+var imageObj4 = new Image();
+//Mars
+var imageObj5 = new Image();
+//Jupiter
+var imageObj6 = new Image();
+//Saturn
+var imageObj7 = new Image();
+//Uranus
+var imageObj8 = new Image();
+//Neptune
+var imageObj9 = new Image();
 
-imageObj.onload = function(){
-context = canvas.getContext('2d');
-	context.drawImage(imageObj,0,0);
+imageObj1.onload = function(){
+
+	context = canvas.getContext('2d');
+	context.drawImage(imageObj1,0,0);
+	context.drawImage(imageObj2,290,280);
+	context.drawImage(imageObj3,330,280);
+	context.drawImage(imageObj4,370,283);
+	context.drawImage(imageObj5,410,285);
+	context.drawImage(imageObj6,450,185);
+	context.drawImage(imageObj7,650,185);
+	context.drawImage(imageObj8,840,245);
+	context.drawImage(imageObj9,920,245);
+
+
 };
-
-imageObj.src = "assets/Background.jpg";
+//Background
+imageObj1.src = "assets/Background.jpg";
+//Mercury
+imageObj2.src = "assets/Mercury.png";
+//venus
+imageObj3.src = "assets/venus.gif";
+//earth
+imageObj4.src = "assets/Venus2.gif";
+//mars
+imageObj5.src = "assets/mars.png";
+//jupiter
+imageObj6.src = "assets/Venus3.gif";
+//saturn
+imageObj7.src = "assets/Venus3.gif";
+//uranus
+imageObj8.src = "assets/uranus.png";
+//Neptune
+imageObj9.src = "assets/neptune.png";
 
 window.onload = function(){
 	canvas = document.getElementById('canvas');
 	context = canvas.getContext('2d');
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//makeParticles();
 	//var button = document.getElementById('artButton');
 	//button.onclick = artHandler;
