@@ -246,16 +246,34 @@ canvas.onclick = function(event) {
  var colors = ["red", "green", "blue", "orange", "purple", "yellow"];
  var color = colors[Math.floor(Math.random()*colors.length)];
 
- context.beginPath();
- context.arc(x, y, 30, 0, degreesToRadians(360), true);
- context.fillStyle = color;
- context.fill();
+drawstar(x,y);
+ //context.beginPath();
+ //context.arc(x, y, 30, 0, degreesToRadians(360), true);
+ //context.fillStyle = color;
+ //context.fill();
 }
 function degreesToRadians(degrees) {
  //converts from degrees to radians and returns
  return (degrees * Math.PI)/180;
 }
-
+function drawstar(x,y){
+	k = 7;
+	context.beginPath();
+            context.moveTo(x+(110/k), y);
+            context.lineTo(x+(141.2/k), y+(67.5/k));
+            context.lineTo(x+(215.7/k), y+(78.3/k));
+            context.lineTo(x+(161.81/k), y+(130.9/k));
+            context.lineTo(x+(174.5/k), y+(205.1/k));
+            context.lineTo(x+(107.8/k), y+(170.1/k));
+            context.lineTo(x+(41.2/k), y+(205/k));
+            context.lineTo(x+(53.9/k), y+(130.9/k));
+            context.lineTo(x+(0.0/k), y+(78.3/k));
+            context.lineTo(x+(74.5/k), y+(67.5/k));
+            context.lineTo(x+(107.8/k), y+(0.0/k));
+            context.closePath();
+            context.fill();
+            context.fillStyle = 'white';
+}
 
 
 
