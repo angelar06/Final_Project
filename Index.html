@@ -214,7 +214,6 @@ imageObj1.onload = function(){
 	context.drawImage(imageObj8,840,245);
 	context.drawImage(imageObj9,920,245);
 
-
 };
 //Background
 imageObj1.src = "assets/Background.jpg";
@@ -238,11 +237,24 @@ imageObj9.src = "assets/neptune.png";
 window.onload = function(){
 	canvas = document.getElementById('canvas');
 	context = canvas.getContext('2d');
-	}
+canvas.onclick = function(event) {
 
+	handleClick(event.clientX,event.clientY);
+};
+}
+ function handleClick(x, y) {
+ var colors = ["red", "green", "blue", "orange", "purple", "yellow"];
+ var color = colors[Math.floor(Math.random()*colors.length)];
 
-
-
+ context.beginPath();
+ context.arc(x, y, 30, 0, degreesToRadians(360), true);
+ context.fillStyle = color;
+ context.fill();
+}
+function degreesToRadians(degrees) {
+ //converts from degrees to radians and returns
+ return (degrees * Math.PI)/180;
+}
 
 
 
