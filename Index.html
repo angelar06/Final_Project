@@ -241,23 +241,21 @@ canvas.onclick = function(event) {
 
 	handleClick(event.clientX,event.clientY);
 };
-}
+
+
  function handleClick(x, y) {
  var colors = ["red", "green", "blue", "orange", "purple", "yellow"];
  var color = colors[Math.floor(Math.random()*colors.length)];
 
 drawstar(x,y);
- //context.beginPath();
- //context.arc(x, y, 30, 0, degreesToRadians(360), true);
- //context.fillStyle = color;
- //context.fill();
 }
 function degreesToRadians(degrees) {
  //converts from degrees to radians and returns
  return (degrees * Math.PI)/180;
 }
 function drawstar(x,y){
-	k = 7;
+	var size = [2,4,6,8,10];
+	var k = size[Math.floor(Math.random()*size.length)];
 	context.beginPath();
             context.moveTo(x+(110/k), y);
             context.lineTo(x+(141.2/k), y+(67.5/k));
@@ -274,6 +272,17 @@ function drawstar(x,y){
             context.fill();
             context.fillStyle = 'white';
 }
+
+	
+	function drawText() {
+		context.fillStyle = 'white';
+		context.font = 'bold 2em sans-serif';
+		context.textAlign = 'right';
+		context.fillText('Art?', canvas.width-40, canvas.height-40);
+	};
+}
+	
+
 
 
 
