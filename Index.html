@@ -201,6 +201,15 @@ var imageObj8 = new Image();
 //Neptune
 var imageObj9 = new Image();
 
+function drawText() {
+		context.font='40px Helvetica';
+		context.strokeText('Press Space to clear the canvas', 400,578);
+		context.fillStyle ='#00ff00';
+		context.fillText('Press Space to clear the canvas',400,578);
+
+
+	};
+
 imageObj1.onload = function(){
 
 	context = canvas.getContext('2d');
@@ -208,10 +217,10 @@ imageObj1.onload = function(){
 	context.drawImage(imageObj2,290,280);
 	context.drawImage(imageObj3,330,280);
 	context.drawImage(imageObj4,370,283);
-	context.drawImage(imageObj5,410,285);
-	context.drawImage(imageObj6,450,185);
-	context.drawImage(imageObj7,650,185);
-	context.drawImage(imageObj8,840,245);
+	context.drawImage(imageObj5,415,285);
+	context.drawImage(imageObj6,425,185);
+	context.drawImage(imageObj7,615,185);
+	context.drawImage(imageObj8,820,245);
 	context.drawImage(imageObj9,920,245);
 
 };
@@ -237,7 +246,7 @@ imageObj9.src = "assets/neptune.png";
 window.onload = function(){
 	canvas = document.getElementById('canvas');
 	context = canvas.getContext('2d');
-
+drawText();
 canvas.onclick = function(event) {
 	handleClick(event.clientX,event.clientY);
 };
@@ -252,6 +261,7 @@ function degreesToRadians(degrees) {
  //converts from degrees to radians and returns
  return (degrees * Math.PI)/180;
 }
+
 function drawstar(x,y){
 	var size = [2,4,6,8,10];
 	var k = size[Math.floor(Math.random()*size.length)];
@@ -276,18 +286,10 @@ function dealWithKeyboard(e){
 	if (e.keyCode == 32){
 		context.clearRect(0, 0, canvas.width, canvas.height);
 	}
- function hoverText
- if 
 
 }
 	window.addEventListener('keydown', dealWithKeyboard, false);
-	window.addEventListener('mouseover', hoverText,false)
-	function drawText() {
-		context.fillStyle = 'white';
-		context.font = 'bold 2em sans-serif';
-		context.textAlign = 'right';
-		context.fillText('Art?', canvas.width-40, canvas.height-40);
-	};
+	
 }
 	
 
@@ -327,13 +329,5 @@ function dealWithKeyboard(e){
 <body>
 
 <canvas id='canvas' width='1047' height='618'></canvas>
-	<form>
-	<input type='button' id='artButton' value='How do you feel?'>
-	</form>
-
-	<form>
-	<input type='button' id='shapeButton' value='Random Shape'>
-	</form>
-
 </body>
 </html>
