@@ -237,15 +237,14 @@ imageObj9.src = "assets/neptune.png";
 window.onload = function(){
 	canvas = document.getElementById('canvas');
 	context = canvas.getContext('2d');
-canvas.onclick = function(event) {
 
+canvas.onclick = function(event) {
 	handleClick(event.clientX,event.clientY);
 };
 
 
  function handleClick(x, y) {
- var colors = ["red", "green", "blue", "orange", "purple", "yellow"];
- var color = colors[Math.floor(Math.random()*colors.length)];
+
 
 drawstar(x,y);
 }
@@ -273,6 +272,14 @@ function drawstar(x,y){
             context.fillStyle = 'white';
 }
 
+function dealWithKeyboard(e){
+	if (e.keyCode == 32){
+		context.clearRect(0, 0, canvas.width, canvas.height);
+	}
+
+
+}
+	window.addEventListener('keydown', dealWithKeyboard, false);
 	
 	function drawText() {
 		context.fillStyle = 'white';
